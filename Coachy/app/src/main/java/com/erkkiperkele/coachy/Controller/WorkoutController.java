@@ -9,64 +9,54 @@ import com.erkkiperkele.coachy.Model.Entities.WorkoutTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorkoutController{
+public class WorkoutController {
 
     private List<Runner> _runners;
     private WorkoutModel _workoutModel;
     private WorkoutSession _session;
 
-    public WorkoutController()
-    {
+    public WorkoutController() {
         _runners = new ArrayList<Runner>();
         _workoutModel = new WorkoutModel();
         _session = new WorkoutSession();
     }
 
 
-    public void createNewWorkout()
-    {
+    public void createNewWorkout() {
         //Create a new workout with default settings
         throw new NoSuchMethodError();
     }
 
-    public void createNewWorkout(WorkoutTemplate template)
-    {
+    public void createNewWorkout(WorkoutTemplate template) {
         //Create a new workout based on the given template settings
         throw new NoSuchMethodError();
     }
 
-    public void updateWorkout(WorkoutTemplate settings)
-    {
+    public void updateWorkout(WorkoutTemplate settings) {
         //Update the workout settings
         throw new NoSuchMethodError();
     }
 
-    public void startWorkouts()
-    {
+    public void startWorkouts() {
         //Start the workout for all runners
         throw new NoSuchMethodError();
     }
 
-    public void stopWorkout()
-    {
+    public void stopWorkout() {
         //Stop all runner's workout
         throw new NoSuchMethodError();
     }
 
-    public void stopRunnerWorkout(int runnerId)
-    {
+    public void stopRunnerWorkout(int runnerId) {
         //Stop the workout for a particular runner
         throw new NoSuchMethodError();
     }
 
-    public void saveRunnerWorkout(int runnerId)
-    {
+    public void saveRunnerWorkout(int runnerId) {
         RunnerWorkout runnerWorkout = new RunnerWorkout();
-        for (int i = 0; i<_runners.size(); ++i )
-        {
+        for (int i = 0; i < _runners.size(); ++i) {
             Runner runner = _runners.get(i);
-            if (runner.Id == runnerId)
-            {
+            if (runner.Id == runnerId) {
                 runnerWorkout = runner.CurrentWorkout;
             }
         }
@@ -74,24 +64,20 @@ public class WorkoutController{
         _workoutModel.saveRunnerWorkout(runnerWorkout);
     }
 
-    public void deleteRunnerWorkout(int runnerId)
-    {
+    public void deleteRunnerWorkout(int runnerId) {
         int runnerWoId = _workoutModel.getRunnerWorkoutSessionId(_session.getId(), runnerId);
         _workoutModel.deleteRunnerWo(runnerWoId);
     }
 
-    public void addLap()
-    {
+    public void addLap() {
         _workoutModel.addLap(_session.getId());
     }
 
-    public void addRunner(Runner runner)
-    {
+    public void addRunner(Runner runner) {
         _runners.add(runner);
     }
 
-    public void removeRunner(Runner runner)
-    {
+    public void removeRunner(Runner runner) {
         _runners.remove(runner);
     }
 }
