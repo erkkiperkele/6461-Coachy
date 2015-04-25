@@ -1,6 +1,14 @@
 package com.erkkiperkele.coachy.Model;
 
+import com.erkkiperkele.coachy.Model.Entities.RunnerWorkout;
+import com.erkkiperkele.coachy.Model.Entities.WorkoutSession;
+
 public class WorkoutModel {
+    private DataAccessLayer _dataAccessLayer;
+
+    public WorkoutModel(){
+        _dataAccessLayer = new DataAccessLayer();
+    }
 
     public void addLap(int sessionId)
     {
@@ -16,26 +24,29 @@ public class WorkoutModel {
     }
 
     public void saveRunnerWorkout(RunnerWorkout runnerWorkout) {
-
-
+        _dataAccessLayer.insertRunnerWorkout(runnerWorkout);
     }
 
 
-    public void getWoSession(){
-
+    public WorkoutSession getWoSession(int workoutSessionId){
+       return _dataAccessLayer.getWoSession(workoutSessionId);
     }
-    public void addWoSession(){
 
-    }
-    public void updateWoSession(){
-
-    }
-    public void deleteWoSession(){
+    public void addWoSession(WorkoutSession workoutSession){
+        _dataAccessLayer.insertWorkoutSession(workoutSession);
 
     }
 
-    public void getRunnerWo(){
+    public void updateWoSession(WorkoutSession workoutSession){
+        _dataAccessLayer.updateWorkoutSession(workoutSession);
+    }
 
+    public void deleteWoSession(int workoutSessionId){
+        _dataAccessLayer.deleteWorkoutSession(workoutSessionId);
+    }
+
+    public RunnerWorkout getRunnerWo(int runnerWorkoutId){
+       return _dataAccessLayer.getRunnerWorkout(runnerWorkoutId);
     }
 
     public void addRunnerWo(){

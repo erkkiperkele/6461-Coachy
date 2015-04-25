@@ -1,7 +1,10 @@
 package com.erkkiperkele.coachy.Controller;
 
 import com.erkkiperkele.coachy.Model.*;
-import com.erkkiperkele.coachy.Observer.Observer;
+import com.erkkiperkele.coachy.Model.Entities.Runner;
+import com.erkkiperkele.coachy.Model.Entities.RunnerWorkout;
+import com.erkkiperkele.coachy.Model.Entities.WorkoutSession;
+import com.erkkiperkele.coachy.Model.Entities.WorkoutTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,13 +76,13 @@ public class WorkoutController{
 
     public void deleteRunnerWorkout(int runnerId)
     {
-        int runnerWoId = _workoutModel.getRunnerWorkoutSessionId(_session.Id, runnerId);
+        int runnerWoId = _workoutModel.getRunnerWorkoutSessionId(_session.getId(), runnerId);
         _workoutModel.deleteRunnerWo(runnerWoId);
     }
 
     public void addLap()
     {
-        _workoutModel.addLap(_session.Id);
+        _workoutModel.addLap(_session.getId());
     }
 
     public void addRunner(Runner runner)
