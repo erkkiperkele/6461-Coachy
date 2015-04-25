@@ -65,7 +65,7 @@ public class WorkoutController {
     }
 
     public void deleteRunnerWorkout(int runnerWorkoutId) {
-        //TODO
+        _workoutModel.deleteRunnerWorkout(runnerWorkoutId);
     }
 
     public void addLap() {
