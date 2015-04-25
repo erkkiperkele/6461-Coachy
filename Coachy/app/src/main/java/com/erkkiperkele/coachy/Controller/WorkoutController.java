@@ -13,12 +13,12 @@ public class WorkoutController {
 
     private List<Runner> _runners;
     private WorkoutModel _workoutModel;
-    private WorkoutSession _session;
+    private WorkoutSession _workoutSession;
 
     public WorkoutController() {
         _runners = new ArrayList<Runner>();
         _workoutModel = new WorkoutModel();
-        _session = new WorkoutSession();
+        _workoutSession = new WorkoutSession();
     }
 
 
@@ -61,16 +61,15 @@ public class WorkoutController {
             }
         }
 
-        _workoutModel.saveRunnerWorkout(runnerWorkout);
+        _workoutModel.updateRunnerWorkout(runnerWorkout);
     }
 
-    public void deleteRunnerWorkout(int runnerId) {
-        int runnerWoId = _workoutModel.getRunnerWorkoutSessionId(_session.getId(), runnerId);
-        _workoutModel.deleteRunnerWo(runnerWoId);
+    public void deleteRunnerWorkout(int runnerWorkoutId) {
+        //TODO
     }
 
     public void addLap() {
-        _workoutModel.addLap(_session.getId());
+        _workoutModel.addLap(_workoutSession.getId());
     }
 
     public void addRunner(Runner runner) {
