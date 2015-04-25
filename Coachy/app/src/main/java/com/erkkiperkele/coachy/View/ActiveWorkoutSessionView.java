@@ -11,14 +11,14 @@ import android.widget.EditText;
 import com.erkkiperkele.coachy.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class ActiveWorkoutSessionView extends ActionBarActivity {
 
     public static final String EXTRA_MESSAGE = "com.erkkiperkele.coachy.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_activeworkoutsessionview);
     }
 
 
@@ -62,7 +62,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Intent intent = new Intent(this, WorkoutSessionStatsView.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);

@@ -13,7 +13,7 @@
                   android:targetSdkVersion="18"/>
 
         <activity
-            android:name=".View.MainActivity"
+            android:name=".View.ActiveWorkoutSessionView"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,12 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".View.DisplayMessageActivity"
+            android:name=".View.WorkoutSessionStatsView"
             android:label="@string/title_activity_display_message"
-            android:parentActivityName=".View.MainActivity">
+            android:parentActivityName=".View.ActiveWorkoutSessionView">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".View.MainActivity"/>
+                android:value=".View.ActiveWorkoutSessionView"/>
         </activity>
     </application>
 

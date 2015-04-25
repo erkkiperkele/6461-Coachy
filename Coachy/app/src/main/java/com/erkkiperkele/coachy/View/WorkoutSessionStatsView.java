@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
-public class DisplayMessageActivity extends ActionBarActivity {
+public class WorkoutSessionStatsView extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
         // Get message from the intent
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(ActiveWorkoutSessionView.EXTRA_MESSAGE);
 
         // Create the textView
         TextView textView = new TextView(this);
