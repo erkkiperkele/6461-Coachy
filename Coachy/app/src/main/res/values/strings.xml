@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Coachy</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="contact_listView">dummy test</string>
+
+
+    <string name="button_send">Send</string>
+    <string name="button_startStop">Start</string>
+
+    <string name="title_activity_display_message">My Message</string>
+    <string name="action_search">Search</string>
+    <string name="action_contacts">Contacts</string>
+
+</resources>
